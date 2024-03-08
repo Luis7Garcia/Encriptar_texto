@@ -131,7 +131,7 @@ const btnBorrar = () =>{
     let parrafoInstrucciones = document.getElementById("parrafo-instrucciones");
     if(texto.length > 0 ){
         document.getElementById("texto").value = "";
-        muñeco.src = "./imagenes/Muñeco.png";
+        muñeco.src = "/imagenes/Muñeco.png";
         mensajeInformativo.textContent = "Ningún mensaje fue encontrado";
         parrafoInstrucciones.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
     }

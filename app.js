@@ -8,6 +8,7 @@ const btnEncriptar = () =>{
     let parrafoInstrucciones = document.getElementById("parrafo-instrucciones");
     let muñeco = document.getElementById("muñeco");
     let acento = texto.normalize("NFD").replace(/[$\.¿\?~!\¡@#%^&*()_|}\{[\]>\<:`;,\u0300-\u036f']/g, "");
+    
 
     //letras remplazadas
     let textoCifrado = texto
@@ -42,7 +43,13 @@ const btnEncriptar = () =>{
             timer: 1000
           });
         }
-    
+
+        //Habilita botón desencriptar
+        document.querySelector('.boton-desencriptar').removeAttribute("disabled");
+
+        //Deshabilita botón encriptar
+        document.querySelector('.boton-encriptar').disabled = true;
+
     //Se muestra en caso que el campo de texto este vacío
     }else {
         muñeco.src = "./imagenes/Muñeco.png"
@@ -64,11 +71,12 @@ const btnDesencriptar = () =>{
 
     //Letras remplazadas
     let textoCifrado = texto
-     .replace(/u/gi, "u")
-     .replace(/ober/gi, "o")
-     .replace(/ai/gi, "a")
-     .replace(/imes/gi, "i")
-     .replace(/enter/gi, "e")
+    .replace(/ufat/gi, "u")
+    .replace(/ober/gi, "o")
+    .replace(/ai/gi, "a")
+    .replace(/imes/gi, "i")
+    .replace(/enter/gi, "e")
+    
 
      //sentencia que verifica si hay letras en el cuadro de texto
     if(texto != 0){
@@ -95,6 +103,12 @@ const btnDesencriptar = () =>{
             timer: 1000
           });
         }
+
+        //Habilita botón encriptar
+        document.querySelector('.boton-encriptar').removeAttribute("disabled");
+
+        //deshabilita botón desencriptar
+        document.querySelector('.boton-desencriptar').disabled = true;
         
      //Se muestra en caso que el campo de texto este vacío
     } else {

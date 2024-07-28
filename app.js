@@ -42,13 +42,13 @@ const btnEncriptar = () =>{
             showConfirmButton: false,
             timer: 1000
           });
+
+            //Habilita botón desencriptar
+            document.querySelector('.boton-desencriptar').removeAttribute("disabled");
+
+             //Deshabilita botón encriptar
+             document.querySelector('.boton-encriptar').disabled = true;
         }
-
-        //Habilita botón desencriptar
-        document.querySelector('.boton-desencriptar').removeAttribute("disabled");
-
-        //Deshabilita botón encriptar
-        document.querySelector('.boton-encriptar').disabled = true;
 
     //Se muestra en caso que el campo de texto este vacío
     }else {
@@ -102,13 +102,13 @@ const btnDesencriptar = () =>{
             showConfirmButton: false,
             timer: 1000
           });
+
+            //Habilita botón encriptar
+            document.querySelector('.boton-encriptar').removeAttribute("disabled");
+
+             //deshabilita botón desencriptar
+             document.querySelector('.boton-desencriptar').disabled = true;
         }
-
-        //Habilita botón encriptar
-        document.querySelector('.boton-encriptar').removeAttribute("disabled");
-
-        //deshabilita botón desencriptar
-        document.querySelector('.boton-desencriptar').disabled = true;
         
      //Se muestra en caso que el campo de texto este vacío
     } else {
@@ -148,6 +148,9 @@ const btnBorrar = () =>{
         muñeco.src = "/imagenes/Muñeco.png";
         mensajeInformativo.textContent = "Ningún mensaje fue encontrado";
         parrafoInstrucciones.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
+
+        document.querySelector('.boton-encriptar').removeAttribute("disabled");
+        document.querySelector('.boton-desencriptar').disabled = false;
     }
 
 }
